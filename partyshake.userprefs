@@ -1,9 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/songScript.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/songScript.js">
     <Files>
-      <File FileName="Assets/songScript.js" Line="18" Column="1" />
-      <File FileName="Assets/StartMusicScript.js" Line="25" Column="4" />
+      <File FileName="Assets/Scripts/shakeDetector.js" Line="33" Column="29" />
+      <File FileName="Assets/Scripts/startGameScript.js" Line="14" Column="22" />
+      <File FileName="Assets/Scripts/songScript.js" Line="78" Column="40" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
