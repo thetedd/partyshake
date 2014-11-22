@@ -2,8 +2,8 @@
   <MonoDevelop.Ide.Workspace />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/shakeDetector.js">
     <Files>
-      <File FileName="Assets/shakeDetector.js" Line="17" Column="33" />
-      <File FileName="../androidtest/Assets/accelerometer.js" Line="1" Column="1" />
+      <File FileName="Assets/shakeDetector.js" Line="33" Column="10" />
+      <File FileName="../androidtest/Assets/accelerometer.js" Line="11" Column="66" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
