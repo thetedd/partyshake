@@ -44,19 +44,19 @@ function Update () {
     for (var i = 1; i < 64; i++) {
     	sum = sum + spectrum[i]*(100);
 	}
-	/*
+	
 	if (sum > 3.0*oldSum){
 		t.text = "HELLO";
 	}else {
 		t.text = "";
 	}
-	*/
+	
 	oldSum = sum;
-	if (first) {
-		avgSum = sum;
-		first = false;
-	}
-	avgSum = alpha * avgSum + (1 - alpha) * sum;
+//	if (first) {
+//		avgSum = sum;
+//		first = false;
+//	}
+//	avgSum = alpha * avgSum + (1 - alpha) * sum;
 	//totSum += oldSum;
 	//totTimes += 1;
 	//avgSum = totSum / totTimes;

@@ -8,6 +8,9 @@ TextureImporter:
     21300006: connect
     21300008: play
     21300010: highscore
+    21300012: yourscorewas
+    21300014: replay
+    21300016: instruction
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -106,6 +109,36 @@ TextureImporter:
         y: 104
         width: 149
         height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: yourscorewas
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 462
+        width: 224
+        height: 107
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: replay
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 61
+        width: 163
+        height: 106
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: instruction
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1
+        width: 287
+        height: 93
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
