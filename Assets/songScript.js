@@ -15,7 +15,6 @@ function Update () {
 
     for (var i = 1; i < 64; i++) {
     	sum = sum + spectrum[i]*(100);
-    	Debug.Log(sum.ToString());
 	}
 	
 	if (sum > 3.0*oldSum){
