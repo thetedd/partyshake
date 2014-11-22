@@ -1,6 +1,6 @@
 ﻿#pragma strict
 
-var t : GUIText;
+//var t : GUIText;
 var sum : int;
 var oldSum : int;
 
@@ -30,6 +30,10 @@ var sadMeow : AudioSource;
 var cat : GameObject;
 
 var scaleFactor : float;
+
+var scoreText : GUIText; 
+
+var oldAverage : float = 0;
 @script RequireComponent(AudioSource)
 function Start () {
 	audio.Play();
@@ -39,19 +43,59 @@ function Update () {
 	var zee : float = Input.acceleration.z;
 	
     var spectrum : float[] = audio.GetSpectrumData (64, 0, FFTWindow.BlackmanHarris);
+    
+    var samples = audio.GetOutputData(256, 0);
+    var average = 0;
+    for (var sample in samples) {
+    	average += sample;
+    }
+    average /= samples.Length;
+    
+    
    	sum = 0;
 
     for (var i = 1; i < 64; i++) {
     	sum = sum + spectrum[i]*(100);
 	}
-	
-	if (sum > 3.0*oldSum){
-		t.text = "HELLO";
-	}else {
-		t.text = "";
+//	
+//	if (sum <1 && sum<14){
+//		cat.transform.localScale = Vector3(0.8f, 0.8f, 0.8f);
+//	}
+//	
+//	if (sum < 15 && sum < 50) {
+//		cat.transform.localScale = Vector3(1.5f, 1.5f, 1.5f);
+//	}
+//	
+//	if ( sum <51 && sum < 150) {
+//		cat.transform.localScale = Vector3(2.0f, 2.0f, 2.0f);
+//	}
+//	
+	if (zee <= downThreshold) {
+		if (average > 3.0*oldAverage) {
+			playMeow(true);
+//			cat.SetActive(true);
+			
+		}
+		else {
+			playMeow(false);
+			score -= scoreDown;
+//			cat.SetActive(false);
+		}
 	}
 	
-	oldSum = sum;
+//	if (sum > 3.0*oldSum){
+//		t.text = "HELLO";
+//	}else {
+//		t.text = "";
+//	}
+	
+	oldAverage = average;
+	
+	if (!audio.isPlaying){
+		PlayerPrefs.SetInt("Score", score);
+		Debug.Log("Put in score" + score);
+		Application.LoadLevel("end");
+	}
 //	if (first) {
 //		avgSum = sum;
 //		first = false;
@@ -61,12 +105,12 @@ function Update () {
 	//totTimes += 1;
 	//avgSum = totSum / totTimes;
 	
-	scaleFactor = sum/100;
-	Debug.Log(scaleFactor);
-	if (scaleFactor != 0){
-//		cat.transform.localScale *= Vector3(scaleFactor,scaleFactor,scaleFactor);
-		cat.transform.localScale = new Vector3(scaleFactor*(cat.transform.localScale.x), scaleFactor*(cat.transform.localScale.y), scaleFactor*(cat.transform.lossyScale.z));
-	}
+//	scaleFactor = sum/100;
+//	Debug.Log(scaleFactor);
+//	if (scaleFactor != 0){
+////		cat.transform.localScale *= Vector3(scaleFactor,scaleFactor,scaleFactor);
+//		cat.transform.localScale = new Vector3(scaleFactor*(cat.transform.localScale.x), scaleFactor*(cat.transform.localScale.y), scaleFactor*(cat.transform.lossyScale.z));
+//	}
 //	if (avgSum > hitSensitivity*oldSum) {
 //			t.text = "HELLO";
 //			cat.SetActive(true);
@@ -74,16 +118,7 @@ function Update () {
 //			t.text = "";
 //			cat.SetActive(false);
 //	}
-	if (zee <= downThreshold) {
-		if (avgSum > hitSensitivity*oldSum) {
-			happyMeow.Play();
-			score += scoreUp;
-		}
-		else {
-			sadMeow.Play();
-			score -= scoreDown;
-		}
-	}
+	
 //	if (avgSum > hitSensitivity*oldSum){
 //		t.text = "HELLO";
 //		if (zee <= downThreshold) {
@@ -133,10 +168,20 @@ function OnGUI () {
     
     //GUI.Box (Rect (0,200,200,50), statusString);
     
-    GUI.Box (Rect (0,250,200,50), score.ToString());
+//    GUI.Box (Rect (0,250,200,50), score.ToString());
+    
+    scoreText.guiText.text = "Score:" + score.ToString();
     	
  }
 
+function playMeow(bool : boolean){
+	if (bool == true){
+		happyMeow.Play();
+	}
+	else {
+		sadMeow.Play();
+	}
+}
 
 //var t : GUIText;
 //var sum : int;
