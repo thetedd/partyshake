@@ -21,7 +21,7 @@ function Update () {
 	*/
 	if (zee >= upThreshold && down){
 		statusString = "TAPPED";
-		
+		down = false;
 	}
 	
 	//Reached down, set down flag to true
