@@ -1,9 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/StartMusicScript.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/songScript.js">
     <Files>
-      <File FileName="Assets/songScript.js" Line="16" Column="4" />
-      <File FileName="Assets/StartMusicScript.js" Line="27" Column="1" />
+      <File FileName="Assets/songScript.js" Line="13" Column="31" />
+      <File FileName="Assets/StartMusicScript.js" Line="25" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
